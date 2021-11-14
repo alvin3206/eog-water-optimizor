@@ -43,6 +43,7 @@ ws.onmessage = function(event) {
   let flag = true;
   if (flag === true) {
     time = new Date();
+    time = time.toJSON();
   }
   console.log(time);
   let type =  result.type;

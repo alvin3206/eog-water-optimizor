@@ -201,7 +201,7 @@ app.post("/post", function(req,res) {
   if (result.type === "CURRENT_STATE") {
     tp = "water_r";
   } else {
-    tp = "water_o";
+    tp = "water_o1";
   }
   produceExample(result, tp)
     .catch((err) => {
