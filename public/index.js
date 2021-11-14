@@ -3,12 +3,11 @@ let ws = new WebSocket('wss://2021-utd-hackathon.azurewebsites.net');
 
 
 let result;
-//開啟後執行的動作，指定一個 function 會在連結 WebSocket 後執行
+
 ws.onopen = function() {
   console.log('open connection');
 };
 
-//關閉後執行的動作，指定一個 function 會在連結中斷後執行
 ws.onclose = function() {
   console.log('close connection');
 };
@@ -58,38 +57,13 @@ ws.onmessage = function(event) {
       matrix[i].sort(GetSortOrder("dollarsPerDay", "flowPerDay"));
     }
     bests = Object.values(matrix).map(value => value[0]);
-    // const reducer = (accumulator, curr) => accumulator + curr;
     current = bests.map(best => best.flowPerDay).reduce((acc, best) => best + acc);
-    // bests.reduce(reducer);
     for (let i in bests) {
       bests[i].id = result.operations[i].id;
       bests[i].ratio = bests[i].dollarsPerDay / bests[i].flowPerDay;
       bests[i].newFlowPerDay = bests[i].flowPerDay + (flowRateIn - current)/operationCount;
     }
-    // bests.sort(GetSortOrder("dollarsPerDay", "flowPerDay"));
 
-
-    // index = 1;
-    // row = operationCount - 1;
-    // while (index < matrix[row].length) {
-    //   if (flowRateIn === current) {
-    //     break;
-    //   } else if (Math.abs(flowRateIn - current) <= 500) {
-    //     ???;
-    //   }
-    //   best[row] = matrix[best[row].id][index];
-    //   index++;
-    //   bests.reduce(reducer);
-    // }
-
-
-    // let res = [];
-    // for (let i in result.operations) {
-    //   let temp = {};
-    //   temp["operationId"] = result.operations[i].id;
-    //   temp["flowRate"] = flowRateIn/operationCount;
-    //   res.push(temp);
-    // }
 
     let res = [];
     for (let i in bests) {
