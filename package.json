@@ -1,0 +1,25 @@
+{
+  "name": "hack",
+  "version": "1.0.0",
+  "description": "EOG water",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvin3206/eog-water-optimizor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvin3206/eog-water-optimizor/issues"
+  },
+  "homepage": "https://github.com/alvin3206/eog-water-optimizor#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "kafkajs": "^1.15.0",
+    "ws": "^8.2.3"
+  }
+}

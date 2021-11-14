@@ -1,1 +1,2 @@
-EOG water
+npm i
+node app.js
